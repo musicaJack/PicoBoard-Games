@@ -18,8 +18,14 @@ A classic game collection for **Raspberry Pi Pico (RP2040)** with a 1.3" ST7789 
 ## Hardware
 
 - **MCU:** Raspberry Pi Pico (RP2040)
-- **Display:** 1.3" ST7789 LCD (240×240)
+- **Display:** 1.3" ST7789 LCD (240×240, 65K color)
 - **Input:** 5-way joystick + action buttons (e.g. A, B, X, Y)
+
+**Board used:** [Waveshare (微雪)](https://www.waveshare.com/) — Raspberry Pi Pico 1.3" LCD expansion board, 65K color, ST7789 driver. Purchased from Taobao: [item link](https://item.taobao.com/item.htm?id=642902148099).
+
+| Board overview | Board detail (pinout, etc.) |
+|----------------|----------------------------|
+| ![Board intro](imgs/Board_Intro.png) | ![Board detail](imgs/Board_Detail.png) |
 
 Pin definitions are in `src/drivers/hw/BoardPins.h` (and `lib/Config/BoardPins.h`). Adjust for your wiring if needed.
 

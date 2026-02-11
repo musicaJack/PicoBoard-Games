@@ -18,8 +18,14 @@
 ## 硬件
 
 - **MCU：** 树莓派 Pico (RP2040)
-- **屏幕：** 1.3 寸 ST7789 LCD（240×240）
+- **屏幕：** 1.3 寸 ST7789 LCD（240×240，65K 色）
 - **输入：** 五向摇杆 + 动作键（如 A、B、X、Y）
+
+**所用开发板：** [微雪 (Waveshare)](https://www.waveshare.com/) — 树莓派 Pico 1.3 寸显示屏 65K 彩色 LCD 扩展板模块，板载 ST7789。淘宝购买链接：[商品链接](https://item.taobao.com/item.htm?id=642902148099)。
+
+| 开发板概览 | 开发板详细信息（引脚等） |
+|------------|--------------------------|
+| ![开发板概览](imgs/Board_Intro.png) | ![开发板详情](imgs/Board_Detail.png) |
 
 引脚在 `src/drivers/hw/BoardPins.h`（以及 `lib/Config/BoardPins.h`）中定义，接线不同时请自行修改。
 
