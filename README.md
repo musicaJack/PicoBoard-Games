@@ -26,6 +26,8 @@ A classic game collection for **Raspberry Pi Pico (RP2040)** with a 1.3" ST7789 
 | Board overview | Board detail (pinout, etc.) |
 |----------------|----------------------------|
 | ![Board intro](imgs/Board_Intro.png) | ![Board detail](imgs/Board_Detail.png) |
+| **Appearance & dimensions** | **Pin layout** |
+| ![Board appearance and dimensions](imgs/Board_Detail_B.png) | ![Board pin layout](imgs/Board_Detail_C.png) |
 
 Pin definitions are in `src/drivers/hw/BoardPins.h` (and `lib/Config/BoardPins.h`). Adjust for your wiring if needed.
 
