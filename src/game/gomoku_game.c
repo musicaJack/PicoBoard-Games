@@ -297,7 +297,7 @@ bool gmk_game_place_human(GmkGameState *g, int row, int col) {
   return true;
 }
 
-bool gmk_game_ai_move(GmkGameState *g) {
+bool gmk_game_ai_move(GmkGameState *g, int *out_r, int *out_c) {
   if (g->game_over || g->cur_player != AI_PLAYER) return false;
 
   uint8_t b[GOMOKU_SIZE][GOMOKU_SIZE];
@@ -309,6 +309,7 @@ bool gmk_game_ai_move(GmkGameState *g) {
       if (b[r][c] != 0) continue;
       if (would_win(b, r, c, AI_PLAYER)) {
         g->board[r][c] = AI_PLAYER;
+        if (out_r) *out_r = r; if (out_c) *out_c = c;
         if (check_win_at(g, r, c, AI_PLAYER)) g->game_over = true;
         else if (is_draw(g)) g->game_over = true;
         else g->cur_player = HU_PLAYER;
@@ -322,6 +323,7 @@ bool gmk_game_ai_move(GmkGameState *g) {
   if (must_block(b, &block_r, &block_c) &&
       (unsigned)block_r < GOMOKU_SIZE && (unsigned)block_c < GOMOKU_SIZE) {
     g->board[block_r][block_c] = AI_PLAYER;
+    if (out_r) *out_r = block_r; if (out_c) *out_c = block_c;
     if (check_win_at(g, block_r, block_c, AI_PLAYER)) g->game_over = true;
     else if (is_draw(g)) g->game_over = true;
     else g->cur_player = HU_PLAYER;
@@ -350,6 +352,7 @@ bool gmk_game_ai_move(GmkGameState *g) {
   }
 
   g->board[best_r][best_c] = AI_PLAYER;
+  if (out_r) *out_r = best_r; if (out_c) *out_c = best_c;
   if (check_win_at(g, best_r, best_c, AI_PLAYER)) g->game_over = true;
   else if (is_draw(g)) g->game_over = true;
   else g->cur_player = HU_PLAYER;

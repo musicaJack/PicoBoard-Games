@@ -16,7 +16,8 @@ typedef struct {
 
 void gmk_game_init(GmkGameState *g);
 bool gmk_game_place_human(GmkGameState *g, int row, int col);
-bool gmk_game_ai_move(GmkGameState *g);
+/* out_r, out_c: optional; when non-NULL, set to AI-placed cell for UI (e.g. blink) */
+bool gmk_game_ai_move(GmkGameState *g, int *out_r, int *out_c);
 bool gmk_game_is_over(const GmkGameState *g);
 uint8_t gmk_game_cell(const GmkGameState *g, int row, int col);
 
