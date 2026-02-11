@@ -221,7 +221,8 @@ void gomoku_run(void) {
       gmk_render(&game, cursor_r, cursor_c, &fb);
       gmk_draw_status_bar(&fb, false);
       if (gmk_game_is_over(&game) && game.has_win_line) {
-        bool human_won = (game.cur_player == 2);
+        /* cur_player 1 = human just moved and won; 2 = AI just moved and won (no switch on game_over) */
+        bool human_won = (game.cur_player == 1);
         gmk_draw_game_over_message(&fb, human_won);
       }
       LCD_1IN3_Display((UWORD *)fb.buf);
