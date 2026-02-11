@@ -1,6 +1,8 @@
 # PicoBoard-Games
 
-A classic game collection for **Raspberry Pi Pico (RP2040)** with a 1.3" ST7789 LCD and 5-way joystick: **Tic-Tac-Toe** and **Gomoku** (Five in a Row). Play against the board or against an AI on a minimal embedded setup.
+A classic game collection for **Raspberry Pi Pico (RP2040)** with a 1.3" ST7789 LCD and 5-way joystick: **Tic-Tac-Toe** and **Gomoku** (Five in a Row). Play against Machine on a minimal embedded setup.
+
+English | [中文](README.zh.md)
 
 ## Screenshots
 
@@ -10,7 +12,7 @@ A classic game collection for **Raspberry Pi Pico (RP2040)** with a 1.3" ST7789 
 
 ## Features
 
-- **Tic-Tac-Toe** — Two players or simple AI
+- **Tic-Tac-Toe** — Human vs AI
 - **Gomoku (五子棋)** — Human vs AI with pattern-based engine (Minimax + Alpha-Beta + heuristic evaluation)
 - **Menu** — Choose game from the main screen
 - **240×240** display, joystick + buttons for input
