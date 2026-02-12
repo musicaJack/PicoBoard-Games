@@ -6,11 +6,9 @@ English | [中文](README.zh.md)
 
 ## Screenshots
 
-| Tic-Tac-Toe | Gomoku |
-|-------------|--------|
-| ![Tic-Tac-Toe](imgs/Tic-Tac-Toe.jpg) | ![Gomoku](imgs/Gomoku.jpg) |
-| **Chess** | |
-| ![Chess](imgs/Chess.jpg) | |
+| Tic-Tac-Toe | Gomoku | Chess |
+|-------------|--------|-------|
+| <img src="imgs/Tic-Tac-Toe.jpg" width="240" /> | <img src="imgs/Gomoku.jpg" width="240" /> | <img src="imgs/Chess.jpg" width="240" /> |
 
 ## Features
 

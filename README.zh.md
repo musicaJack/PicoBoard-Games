@@ -4,11 +4,9 @@
 [English](README.md) | 中文
 ## 截图
 
-| 井字棋 | 五子棋 |
-|--------|--------|
-| ![井字棋](imgs/Tic-Tac-Toe.jpg) | ![五子棋](imgs/Gomoku.jpg) |
-| **国际象棋** | |
-| ![国际象棋](imgs/Chess.jpg) | |
+| 井字棋 | 五子棋 | 国际象棋 |
+|--------|--------|----------|
+| <img src="imgs/Tic-Tac-Toe.jpg" width="240" /> | <img src="imgs/Gomoku.jpg" width="240" /> | <img src="imgs/Chess.jpg" width="240" /> |
 
 ## 功能特点
 
