@@ -28,9 +28,9 @@ English | [中文](README.zh.md)
 
 | Board overview | Board detail (pinout, etc.) |
 |----------------|----------------------------|
-| ![Board intro](imgs/Board_Intro.png) | ![Board detail](imgs/Board_Detail_A.png) |
+| <img src="imgs/Board_Intro.png" width="240" /> | <img src="imgs/Board_Detail_A.png" width="240" /> |
 | **Appearance & dimensions** | **Pin layout** |
-| ![Board appearance and dimensions](imgs/Board_Detail_B.png) | ![Board pin layout](imgs/Board_Detail_C.png) |
+| <img src="imgs/Board_Detail_B.png" width="240" /> | <img src="imgs/Board_Detail_C.png" width="240" /> |
 
 Pin definitions are in `src/drivers/hw/BoardPins.h` (and `lib/Config/BoardPins.h`). Adjust for your wiring if needed.
 
