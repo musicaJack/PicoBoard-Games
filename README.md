@@ -1,6 +1,6 @@
 # PicoBoard-Games
 
-A classic game collection for **Raspberry Pi Pico (RP2040)** with a 1.3" ST7789 LCD and 5-way joystick: **Tic-Tac-Toe** and **Gomoku** (Five in a Row). Play against Machine on a minimal embedded setup.
+A classic game collection for **Raspberry Pi Pico (RP2040)** with a 1.3" ST7789 LCD and 5-way joystick: **Tic-Tac-Toe**, **Gomoku** (Five in a Row), and **Chess**. Play against the machine on a minimal embedded setup.
 
 English | [中文](README.zh.md)
 
@@ -9,11 +9,14 @@ English | [中文](README.zh.md)
 | Tic-Tac-Toe | Gomoku |
 |-------------|--------|
 | ![Tic-Tac-Toe](imgs/Tic-Tac-Toe.jpg) | ![Gomoku](imgs/Gomoku.jpg) |
+| **Chess** | |
+| ![Chess](imgs/Chess.jpg) | |
 
 ## Features
 
 - **Tic-Tac-Toe** — Human vs AI
 - **Gomoku (五子棋)** — Human vs AI with pattern-based engine (Minimax + Alpha-Beta + heuristic evaluation)
+- **Chess** — Human (White) vs AI (Black). Difficulty: Easy (greedy eval) or Medium (3-ply Negamax + Alpha-Beta). Promotion to Queen only. Selected piece highlighted with yellow border; last AI move with red border.
 - **Menu** — Choose game from the main screen
 - **240×240** display, joystick + buttons for input
 
@@ -46,11 +49,13 @@ Pin definitions are in `src/drivers/hw/BoardPins.h` (and `lib/Config/BoardPins.h
 │   │   └── lcd/             # LCD_1in3
 │   ├── game/                # Game logic
 │   │   ├── tictactoe_game.* # Tic-Tac-Toe rules
-│   │   └── gomoku_game.*     # Gomoku rules + AI
+│   │   ├── gomoku_game.*    # Gomoku rules + AI
+│   │   └── chess_*          # Chess rules, move gen, eval, Easy/Medium AI
 │   └── ui/                  # Menus and game screens
 │       ├── menu_ui.*        # Main menu
 │       ├── tictactoe_ui.*   # Tic-Tac-Toe screen
-│       └── gomoku_ui.*      # Gomoku screen
+│       ├── gomoku_ui.*      # Gomoku screen
+│       └── chess_ui.*       # Chess: difficulty pick + board/pieces/input
 └── lib/                     # Optional legacy driver copies (Config, LCD)
 ```
 
@@ -75,6 +80,12 @@ Pin definitions are in `src/drivers/hw/BoardPins.h` (and `lib/Config/BoardPins.h
 | Confirm       | A, Y, or joystick press |
 | Back / Quit   | X                  |
 | Restart game  | B                  |
+
+**Chess:** Same. Select a white piece (yellow border), move to a legal square and confirm; press the same square again to cancel selection. Bottom shows "AI Thinking..." while AI is computing; last AI move is marked with a red border. On game start you pick **Easy** or **Medium** AI.
+
+## Chess AI
+
+Chess logic and AI are ported from the [Chess_Pico](demo/Chess_Pico) demo (C++ → C). **Easy** uses a greedy material evaluation; **Medium** uses 3-ply Negamax with Alpha-Beta and `eval_material` / `eval_after_move`. Promotion is to Queen only. Human plays White; AI plays Black. Piece graphics are 28×28 1bpp, generated from the demo assets by `tools/chess_piece_scale/scale_pieces.py`.
 
 ## Gomoku AI
 

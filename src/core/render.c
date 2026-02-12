@@ -84,3 +84,21 @@ void render_draw_glyph_5x7(FrameBuffer *fb, int x, int y, const uint8_t glyph[7]
     }
   }
 }
+
+void chess_draw_piece_fb(FrameBuffer *fb, int x, int y, const uint8_t *bitmap, int w, int h, uint16_t fg, uint16_t bg) {
+  if (w <= 0 || h <= 0) return;
+  /* 位图按连续位流存放：像素 (r,c) 对应位 r*w+c，与 scale_pieces.py 一致 */
+  for (int r = 0; r < h; r++) {
+    int fy = y + r;
+    if ((unsigned)fy >= (unsigned)fb->h) continue;
+    for (int c = 0; c < w; c++) {
+      int fx = x + c;
+      if ((unsigned)fx >= (unsigned)fb->w) continue;
+      int pos = r * w + c;
+      int byte_idx = pos / 8;
+      int bit = 7 - (pos % 8);
+      int pixel = (bitmap[byte_idx] >> bit) & 1;
+      fb_put(fb, fx, fy, pixel ? fg : bg);
+    }
+  }
+}

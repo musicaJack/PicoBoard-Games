@@ -1,6 +1,7 @@
 #include "ui/menu_ui.h"
 #include "ui/tictactoe_ui.h"
 #include "ui/gomoku_ui.h"
+#include "ui/chess_ui.h"
 #include "DEV_Config.h"
 #include "LCD_1in3.h"
 
@@ -20,5 +21,7 @@ int main(void)
             tictactoe_run();
         else if (choice == 2)
             gomoku_run();
+        else if (choice == 3)
+            chess_run();
     }
 }

@@ -1,4 +1,4 @@
-add_library(ui menu_ui.c tictactoe_ui.c gomoku_ui.c)
+add_library(ui menu_ui.c tictactoe_ui.c gomoku_ui.c chess_ui.c)
 target_include_directories(ui PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}
   ${CMAKE_CURRENT_SOURCE_DIR}/../drivers/hw
