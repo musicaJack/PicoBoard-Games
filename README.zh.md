@@ -26,9 +26,9 @@
 
 | 开发板概览 | 开发板详细信息（引脚等） |
 |------------|--------------------------|
-| <img src="imgs/Board_Intro.png" width="240" /> | <img src="imgs/Board_Detail_A.png" width="240" /> |
+| ![开发板概览](imgs/Board_Intro.png) | ![开发板详情](imgs/Board_Detail_A.png) |
 | **外观与尺寸** | **引脚排列** |
-| <img src="imgs/Board_Detail_B.png" width="240" /> | <img src="imgs/Board_Detail_C.png" width="240" /> |
+| ![主板外观和尺寸](imgs/Board_Detail_B.png) | ![主板引脚排列](imgs/Board_Detail_C.png) |
 
 引脚在 `src/drivers/hw/BoardPins.h`（以及 `lib/Config/BoardPins.h`）中定义，接线不同时请自行修改。
 
