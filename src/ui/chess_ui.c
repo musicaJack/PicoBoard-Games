@@ -343,6 +343,14 @@ void chess_run(void) {
                 }
                 dirty = true;
               }
+            } else if (chess_is_own_piece(state.board[cur_r][cur_c], 1)) {
+              /* 已选中某子时，直接点另一个白子：换选，黄框跟随 */
+              chess_legal_moves_from(&state, cur_r, cur_c, &legal_list);
+              if (legal_list.count > 0) {
+                sel_r = cur_r;
+                sel_c = cur_c;
+                dirty = true;
+              }
             }
           } else {
             if (chess_is_own_piece(state.board[cur_r][cur_c], 1)) {
